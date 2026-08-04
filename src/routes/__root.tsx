@@ -7,6 +7,7 @@ import {
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
+import { useEffect, useState } from "react";
 
 import appCss from "../styles.css?url";
 import { SiteHeader } from "@/components/layout/SiteHeader";
@@ -117,7 +118,65 @@ function RootComponent() {
       <main>
         <Outlet />
       </main>
+      <CookieNotice />
       <SiteFooter />
     </QueryClientProvider>
+  );
+}
+
+function CookieNotice() {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const consent = window.localStorage.getItem("renaissance-cookie-consent");
+    if (!consent) {
+      setIsVisible(true);
+    }
+  }, []);
+
+  if (!isVisible) {
+    return null;
+  }
+
+  const handleAccept = () => {
+    window.localStorage.setItem("renaissance-cookie-consent", "accepted");
+    setIsVisible(false);
+  };
+
+  const handleDismiss = () => {
+    window.localStorage.setItem("renaissance-cookie-consent", "dismissed");
+    setIsVisible(false);
+  };
+
+  return (
+    <div className="fixed bottom-4 left-4 z-[60] max-w-sm rounded-[28px] border border-white/15 bg-[var(--renaissance-blue)]/95 p-5 text-white shadow-[0_20px_60px_rgba(0,0,0,0.28)] backdrop-blur-xl">
+      <div className="flex items-start justify-between gap-3">
+        <div>
+          <p className="text-sm font-semibold">We use cookies to improve your experience</p>
+          <p className="mt-2 text-sm leading-6 text-white/75">
+            This site uses small cookies to keep things smooth and remember your choices.
+          </p>
+        </div>
+        <div className="mt-0.5 inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/20 bg-white/10 text-lg">
+          🍪
+        </div>
+      </div>
+      <div className="mt-4 flex flex-wrap gap-2">
+        <button
+          type="button"
+          onClick={handleAccept}
+          className="rounded-full bg-white px-4 py-2 text-sm font-semibold text-ink transition-colors hover:bg-background"
+        >
+          Accept
+        </button>
+        <button
+          type="button"
+          onClick={handleDismiss}
+          className="rounded-full border border-white/20 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-white/10"
+        >
+          Close
+        </button>
+      </div>
+    </div>
   );
 }

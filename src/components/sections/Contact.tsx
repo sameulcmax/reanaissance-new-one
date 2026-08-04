@@ -11,7 +11,7 @@ export function Contact() {
         {/* LEFT */}
         <div className="md:col-span-7">
           <p className="text-[10px] uppercase tracking-[0.3em] text-foreground/60 sm:text-xs">
-            Contact
+            Get in touch
           </p>
 
           <h2 className="display-xl mt-5 text-[clamp(2.5rem,8vw,7rem)] leading-[0.95]">
@@ -46,9 +46,6 @@ export function Contact() {
             </motion.a>
           ))}
 
-          <p className="pt-4 text-xs text-foreground/60 sm:text-sm">
-            Replies within one business day · Worldwide
-          </p>
         </div>
       </div>
     </section>

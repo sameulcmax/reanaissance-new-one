@@ -15,7 +15,11 @@ export function AboutSection() {
           <p className="font-sans text-sm uppercase tracking-[0.35em] text-foreground/60">
             ABOUT
           </p>
-          <h2 className="mt-6 font-display text-xl sm:text-3xl md:text-5xl leading-tight tracking-tight text-foreground">
+           <h2 className="mt-6 font-display text-xl sm:text-3xl md:text-5xl leading-tight tracking-tight text-renaissance-blue">
+            Renaissance Meetings & Special Events 
+          </h2>
+         <h2 className="mt-6 font-sans text-xl sm:text-3xl md:text-4xl leading-tight tracking-tight text-black italic"> "Where Creativity Begins"</h2>
+          <h2 className="mt-6 font-sans text-xl sm:text-3xl md:text-5xl leading-tight tracking-tight  text-renaissance-blue">
             For three decades, Renaissance Meetings &amp; Special Events has been a trusted partner for global brands, Fortune 500 companies, associations, sports, non-profits, and visionary leaders.
           </h2>
         </div>
