@@ -8,9 +8,9 @@ const SLIDES = [
     overTitle: "Roberto Clemente Foundation",
   },
   {
-    img: "/b1.jpeg",
-    overTitle: "Verus Annual Convention",
-    sub: "Verus",
+    img: "/nnn.jpeg",
+    overTitle: "Phillips & Jordan Career Fair",
+    sub: "PJ",
   },
   {
     img: "/e2.jpeg",

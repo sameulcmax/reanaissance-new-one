@@ -1,7 +1,7 @@
 import { motion } from "motion/react";
 import interview from "/a1.jpeg";
 import gala from "/e2.jpeg";
-import webcast from "/b1.jpeg";
+import webcast from "/nnn.jpeg";
 import networking from "/n3.jpeg";
 
 type Block = {
@@ -31,8 +31,8 @@ const BLOCKS: Block[] = [
     variant: "blob4",
   },
   {
-    title: "VERUS",
-    body: "A comprehensive mass tort litigation support summit for Verus in New York — featuring expert panels, strategic networking, and end-to-end case management workshops for law firms.",
+    title: "Phillips & Jordan Career Fair",
+    body: "A corporate recruitment and hiring event hosted for heavy civil contractor Phillips & Jordan, Inc. at the Wharton Civic Center, connecting prospective candidates with career opportunities in infrastructure construction and field operations.",
     bg: "var(--cream)",
     fg: "var(--background)",
     img: webcast,
