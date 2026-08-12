@@ -1,5 +1,5 @@
-
 import { useRef, useState, useEffect } from "react";
+
 export function Hero() {
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const [muted, setMuted] = useState(false);
@@ -34,9 +34,12 @@ export function Hero() {
   }, [muted]);
 
   return (
-    <section className="relative bg-background">
-      {/* Fullscreen visual (background video) */}
-      <div className="relative h-[100vh] min-h-[600px] w-full overflow-hidden">
+    // Added mt-20 (80px) to push this section down below your fixed header. 
+    // Adjust this value (mt-16, mt-24, or mt-[70px]) to perfectly match your header's height.
+    <section className="relative bg-background mt-30">
+      
+      {/* Changed h-[100vh] to h-[80vh] and adjusted min-h-[600px] to min-h-[500px] */}
+      <div className="relative h-[80vh] min-h-[500px] w-full overflow-hidden">
         <video
           ref={videoRef}
           autoPlay
@@ -45,7 +48,7 @@ export function Hero() {
           playsInline
           className="absolute inset-0 h-full w-full object-cover"
         >
-          <source src="/vid3.mp4" type="video/mp4" />
+          <source src="/vid4.mp4" type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-black/30" />
 
